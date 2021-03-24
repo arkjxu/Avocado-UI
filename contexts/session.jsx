@@ -31,7 +31,7 @@ const Provider = (props) => {
     onGoogleLogin: async (res) => {
       props.setLoading(true)
       try {
-        const user = await fetchJson("http://localhost:8080/user/authorize?code=" + res.code, { 
+        const user = await fetchJson("https://fcavocado.herokuapp.com/user/authorize?code=" + res.code, { 
           method: "POST",
           mode: "cors",
         })
