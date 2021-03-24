@@ -1,0 +1,139 @@
+.joinus {
+  align-items: center;
+  position: relative;
+  flex: 1;
+}
+
+.jointitle {
+  padding: 20px 0;
+  background: rgb(0,203,169);
+  background: linear-gradient(90deg, rgba(0,203,169,1) 0%, rgba(0,203,141,1) 65%, rgba(9,121,117,1) 100%);
+  border-bottom-left-radius:30%;
+  border-bottom-right-radius:30%;
+  animation: titleIn 850ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transition: all 850ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.slogan, .description {
+  animation: fadeUpIn 650ms ease forwards;
+  transition: all 650ms ease;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.description {
+  font-size: 0.8rem;
+  color: rgb(243, 243, 243);
+  text-align: center;
+  padding: 0;
+  margin: 10px 0;
+  animation-delay: 175ms;
+}
+
+.content {
+  justify-content: center;
+  width: 100%;
+}
+
+.joinus, .content {
+  flex-flow: column;
+}
+
+.slogan {
+  font-weight: bolder;
+  text-align: center;
+  color:#fff;
+  margin: 5px 0;
+}
+
+.content, .joinus, .cards, .cardtitle {
+  display: flex;
+}
+
+.cards {
+  flex-flow: row;
+  justify-content: center;
+  margin: 50px 0 50px 0;
+}
+
+.card {
+  margin: 0 10px;
+  padding: 0 20px;
+  max-width: 270px;
+}
+
+.card h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.googlelogin {
+  border-radius: 6px !important;
+  background-color: #00cba9 !important;
+  color: #fff !important;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.googlelogin svg {
+  display: none;
+}
+
+.googlelogin > div:first-of-type {
+  width: 0 !important;
+  padding: 0 !important;
+}
+
+.info {
+  font-size: 0.8rem;
+  color: rgb(73, 73, 73);
+}
+
+.seperator {
+  width: 1px;
+  background-color: #dddddd;
+}
+
+.icons {
+  width: 60px;
+  height: 60px;
+  margin: 10px 0;
+}
+
+.cardtitle {
+  justify-content:center;
+  align-items:center;
+  flex-flow: column;
+}
+
+@media (max-width: 650px) {
+  .cards {
+    flex-flow: column;
+    margin: 10px 0;
+  }
+  .card {
+    max-width: unset;
+  }
+  .googlelogin {
+    margin: 30px auto;
+  }
+}
+
+@keyframes fadeUpIn {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes titleIn {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    height: 145px;
+    opacity: 1;
+  }
+}
