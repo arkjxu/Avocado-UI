@@ -1,0 +1,119 @@
+.welcome {
+  opacity: 0.5;
+  margin: 20px;  
+}
+
+.rankcards {
+  display: flex;
+  flex-flow: column;
+}
+
+.totals {
+  display: flex;
+  flex-flow: column;
+  box-shadow: 0 0 1px 1px rgb(206, 206, 206);
+}
+
+.totals {
+  color: #fff;
+  background-color:#00cba9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.totals p {
+  margin: 10px 0;
+}
+
+.panels {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 20px;
+}
+
+.addassetbtn {
+  max-width: 150px;
+  padding: 8px 0;
+  margin: 20px 0;
+  outline: none;
+  border: none;
+  border-radius: 26px;
+  background-color: #fff;
+  color:#00cba9;
+}
+
+.addassetbtn:hover {
+  cursor: pointer;
+}
+
+.rightpanel, .leftpanel {
+  width: 100%;
+}
+
+.filters {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.totalnetworth {
+  word-break: break-all;
+}
+
+.rightpanel {
+  margin-left: 20px;
+  max-width: 400px;
+}
+
+.dollar, .networth {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.networth {
+  padding: 0 10px;
+}
+
+.totals h4 {
+  color: rgb(228, 228, 228);
+}
+
+.table {
+  padding: 8px 10px;
+}
+
+.table thead th p, .totals h3 {
+  margin: 0;
+}
+
+.row {
+  box-shadow: 0 0 1px 1px rgb(206, 206, 206);
+}
+
+.asset, .liability {
+  margin: 0 15px;
+}
+
+.asset {
+  color: #00cba9;
+}
+
+.liability {
+  color: #ff5056;
+}
+
+@media (max-width: 650px) {
+  .rightpanel {
+    max-width: unset;
+  }
+  .leftpanel {
+    margin-bottom: 20px;
+  }
+  .panels {
+    flex-flow: column;
+  }
+  .rightpanel {
+    margin-left: 0;
+  }
+}

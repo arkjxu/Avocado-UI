@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  background-color: #fff;
+  padding: 0 24px;
+  justify-content: space-between;
+  align-items: center;
+  position:relative;
+  box-shadow: 0 0 0.5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.title, .logoutbtn {
+  color: #00cba9;
+}
+
+.title::after {
+  content: "Beta";
+  font-size: 0.5rem;
+  padding-left: 5px;
+}
+
+.avocadoimg {
+  width: 40px;
+  margin-right: 10px;
+  user-select: none;
+}
+
+.avocadoimg {
+  height: 100%;
+}
+
+.logoutbtn {
+  border-radius: 8px !important;
+  background-color: #00cba9 !important;
+  color: #fff;
+  text-align: center;
+  padding: 5px 8px;
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.logoutbtn:hover {
+  cursor: pointer;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
+}
+
+.usercontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
