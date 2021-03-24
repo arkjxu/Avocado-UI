@@ -1,5 +1,6 @@
 import { setLoading } from "./commonActions";
 import { clearSession } from "../lib/session";
+import { clearBalance } from "./balanceActions";
 
 export const SET_USER = "SET_USER";
 export const CLEAR_USER = "CLEAR_USER";
@@ -22,6 +23,7 @@ export function logOut() {
     dispatch(setLoading(true));
     dispatch(clearUser());
     await clearSession();
+    dispatch(clearBalance());
     dispatch(setLoading(false));
   }
 }

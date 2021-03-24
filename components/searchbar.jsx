@@ -4,6 +4,8 @@
 *   -> A simple search bar for filtering
 */
 
+import PropTypes from 'prop-types';
+
 const SearchBar = ({onChange, placeholder}) => {
   return (
     <>
@@ -34,6 +36,11 @@ const SearchBar = ({onChange, placeholder}) => {
     `}</style>
     </>
   )
+}
+
+SearchBar.propTypes = {
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
 }
 
 export default SearchBar;

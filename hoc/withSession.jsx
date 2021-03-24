@@ -6,7 +6,6 @@
 
 import { useContext } from 'react';
 import { SessionContext } from '../contexts/session';
-import Router from "next/router";
 
 const withSession = (Component) => (props) => {
   const sessionProps = useContext(SessionContext);

@@ -4,7 +4,7 @@
 *   -> Balance operations
 */
 
-import { ADD_BALANCE, REMOVE_BALANCE, SET_BALANCE } from "./balanceActions";
+import { ADD_BALANCE, REMOVE_BALANCE, SET_BALANCE, CLEAR_BALANCE } from "./balanceActions";
 
 const defaultState = {
   balances: null,
@@ -19,6 +19,8 @@ const BalanceReducer = (state = defaultState, action) => {
       const newBalance = [...state.balances];
       newBalance.splice(action.payload, 1);
       return {...state, balances: newBalance}
+    case CLEAR_BALANCE:
+      return {...state, balances: null}
     default:
       return {...state};
   }

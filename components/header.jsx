@@ -4,11 +4,11 @@
 *   -> header with logo and avatar/logout
 */
 
+import PropTypes from 'prop-types';
 import withSession from "../hoc/withSession";
-import { GoogleLogout } from 'react-google-login';
 import styles from "../styles/Header.module.css";
 
-const Header = ({user, onGoogleLogOut, oauth2ClientId}) => {
+const Header = ({user, onGoogleLogOut}) => {
   return (
     <div className={styles.header}>
       <div className={styles.title}>
@@ -22,6 +22,20 @@ const Header = ({user, onGoogleLogOut, oauth2ClientId}) => {
       </div> }
     </div>
   );
+}
+
+Header.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.string,
+    email: PropTypes.string,
+    verified_email: PropTypes.bool,
+    name: PropTypes.string,
+    given_name: PropTypes.string,
+    family_name: PropTypes.string,
+    picture: PropTypes.string,
+    locale: PropTypes.string,
+  }),
+  onGoogleLogOut: PropTypes.func,
 }
 
 export default withSession(Header);

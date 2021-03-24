@@ -1,5 +1,3 @@
-import {Provider} from 'react-redux';
-import App from 'next/app';
 import SessionContext from "../contexts/session";
 import { wrapper } from '../store/store';
 import "../styles/globals.css";

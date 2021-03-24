@@ -6,11 +6,18 @@
 
 import { setLoading } from "./commonActions";
 import { GetUserBalances, AddBalance, RemoveBalance as removeBalanceAPI } from "../lib/balances";
-import { setNotification, setShowNotification } from "./commonActions";
+import { toast } from 'react-toastify';
 
 export const SET_BALANCE = "SET_BALANCE";
 export const ADD_BALANCE = "ADD_BALANCE";
 export const REMOVE_BALANCE = "REMOVE_BALANCE";
+export const CLEAR_BALANCE = "CLEAR_BALANCE";
+
+export function clearBalance() {
+  return {
+    type: CLEAR_BALANCE,
+  }
+}
 
 export function setBalances(balances) {
   return {
@@ -37,10 +44,10 @@ export function removeUserBalance(index, balance,) {
   return async (dispatch) => {
     const res = await removeBalanceAPI(balance)
     if (!res) {
-      dispatch(setNotification("Unable to remove balance, please try again..."))
-      dispatch(setShowNotification(true))
+      toast.error("Oops, unable to remove balance, please try again.");
+    } else {
+      dispatch(removeBalance(index))
     }
-    dispatch(removeBalance(index))
   }
 }
 
@@ -50,8 +57,7 @@ export function addNewBalance(balance) {
     if (!!newBalance) {
       dispatch(addBalance(newBalance))
     } else {
-      dispatch(setNotification("Unable to add balance, please try again..."))
-      dispatch(setShowNotification(true))
+      toast.error("Oops, unable to add balance, please try again.");
     }
   }
 }
@@ -63,8 +69,7 @@ export function fetchBalances() {
     if (!!userBalances) {
       dispatch(setBalances(userBalances));
     } else {
-      dispatch(setNotification("Unable to fetch balances, please refresh and try again..."))
-      dispatch(setShowNotification(true))
+      toast.error("Oops, unable to fetch your balances, please try again.");
     }
     dispatch(setLoading(false));
   }

@@ -7,7 +7,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-const Tabs = (props) => {
+const Tabs = () => {
   const router = useRouter();
   return (
     <>

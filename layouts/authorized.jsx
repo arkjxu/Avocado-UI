@@ -9,6 +9,8 @@ import MainLayout from "./main";
 import Tabs from "../components/tabs";
 import withSession from "../hoc/withSession";
 import Loading from "../components/loading";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AuthorizedLayout = ({children, oauth2ClientId, isLoading}) => {
   if (isLoading) {
@@ -19,6 +21,16 @@ const AuthorizedLayout = ({children, oauth2ClientId, isLoading}) => {
       <div className="authorized">
           <Tabs/>
           {children}
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            pauseOnHover
+          />
       </div>
       <style jsx>
         {`

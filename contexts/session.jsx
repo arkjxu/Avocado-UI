@@ -13,6 +13,7 @@ import { bindActionCreators } from 'redux'
 import { setLoading } from "../store/commonActions";
 import { setUser, logOut } from "../store/userActions"; 
 import { validateSession } from "../lib/session";
+import { toast } from "react-toastify";
 
 export const SessionContext = createContext();
 
@@ -36,8 +37,11 @@ const Provider = (props) => {
         })
         if (!!user && !user.error) {
           props.setUser(user);
+        } else {
+          toast.error("Uh-oh, can't seem to log in you, please clear cache and try again.");
         }
       } catch(e) {
+        toast.error("Uh-oh, something bad happened, please check the logs.");
         console.error(e);
       }
       props.setLoading(false)

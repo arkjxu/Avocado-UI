@@ -4,7 +4,9 @@
 *   -> A React table to display balances using pagination
 */
 
+import PropTypes from 'prop-types';
 import { useTable, usePagination } from "react-table";
+import { toast } from "react-toastify";
 
 const Table = ({ columns, data, onActionDelete }) => {
   const {
@@ -152,5 +154,20 @@ const Table = ({ columns, data, onActionDelete }) => {
     </>
   );
 };
+
+Table.propTypes = {
+  columns: PropTypes.arrayOf(PropTypes.shape({
+    Header: PropTypes.string,
+    accessor: PropTypes.string,
+  })),
+  data: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    balance: PropTypes.number,
+    created: PropTypes.string,
+  })),
+  onActionDelete: PropTypes.func,
+}
 
 export default Table;

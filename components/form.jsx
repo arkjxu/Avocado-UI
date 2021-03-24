@@ -5,6 +5,7 @@
 */
 
 import { CurrentDateString } from "../utils";
+import PropTypes from "prop-types";
 
 const Form = ({onSubmit, onClose}) => {
   const onSubmitValidate = (e) => {
@@ -148,6 +149,11 @@ const Form = ({onSubmit, onClose}) => {
       </style>
     </form>
   );
+}
+
+Form.propTypes = {
+  onSubmit: PropTypes.func,
+  onClose: PropTypes.func,
 }
 
 export default Form;

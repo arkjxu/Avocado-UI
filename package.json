@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "test": "cypress run",
     "start": "next start"
   },
   "dependencies": {
-    "chart.js": "^2.9.4",
-    "cookie": "^0.4.1",
     "js-cookie": "^2.2.1",
     "next": "10.0.9",
     "next-redux-wrapper": "^6.0.2",
@@ -20,8 +19,11 @@
     "react-select": "^4.3.0",
     "react-spring": "^8.0.27",
     "react-table": "^7.6.3",
+    "react-toastify": "^7.0.3",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0",
-    "swr": "^0.5.4"
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "cypress": "^6.8.0"
   }
 }

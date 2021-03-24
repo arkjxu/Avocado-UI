@@ -7,7 +7,7 @@
 import Head from "next/head";
 import PropTypes from "prop-types";
 
-const DefaultLayout = ({oauth2ClientId, children}) => {
+const DefaultLayout = ({children}) => {
     return (
         <div>
             <Head>

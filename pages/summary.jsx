@@ -24,10 +24,6 @@ const tableColumns = [
     Header: "Name",
     accessor: "name",
   },
-  // {
-  //   Header: "Created",
-  //   accessor: "created",
-  // },
   {
     Header: "Balance",
     accessor: "balance",
@@ -37,12 +33,6 @@ const tableColumns = [
     accessor: "action",
   },
 ];
-
-const availableTypes = [
-  { value: "Any", label: "Any" },
-  { value: "Asset", label: "Asset" },
-  { value: "Liability", label: "Liability" },
-]
 
 export async function getStaticProps() {
   return {

@@ -4,6 +4,7 @@
 *   -> Ranking Bar/Card to display total and top 3 balances
 */
 
+import PropTypes from "prop-types";
 import { sortByBalance } from "../utils";
 
 const Bar = ({title, total, data, current, color}) => {
@@ -79,6 +80,20 @@ const Bar = ({title, total, data, current, color}) => {
       `}</style>
     </>
   )
+}
+
+Bar.propTypes = {
+  title: PropTypes.string,
+  total: PropTypes.number,
+  data: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    type: PropTypes.string,
+    balance: PropTypes.number,
+    created: PropTypes.string,
+  })),
+  current: PropTypes.number,
+  color: PropTypes.string,
 }
 
 export default Bar;
