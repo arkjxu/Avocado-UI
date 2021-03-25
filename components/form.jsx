@@ -18,7 +18,7 @@ const Form = ({onSubmit, onClose}) => {
         toast.warn("Name must be less than 30 characters");
         return
       }
-      if (type !== "Asset" || type !== "Liability") {
+      if (type !== "Asset" && type !== "Liability") {
         toast.warn("Type must be either an Asset or a Liability");
         return
       }
