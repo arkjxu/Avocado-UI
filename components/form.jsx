@@ -18,11 +18,23 @@ const Form = ({onSubmit, onClose}) => {
         toast.warn("Name must be less than 30 characters");
         return
       }
+      if (type !== "Asset" || type !== "Liability") {
+        toast.warn("Type must be either an Asset or a Liability");
+        return
+      }
       if (e.target["balance"].value.length > 12) {
         toast.warn("Balance must be less than or equal to 12 digitals including 2 decimal places");
         return
       }
+      if (!(/^(?=.?\d)\d{0,10}(\.?\d{0,2})?$/.test(e.target["balance"].value))) {
+        toast.warn("Balance must be a currency value, ie. 15.00");
+        return
+      }
       const balance = parseFloat(e.target["balance"].value);
+      if (balance < 0) {
+        toast.warn("Balance must be a positive currency value, ie. 15.00");
+        return
+      }
       const created = CurrentDateString();
       if (onSubmit) onSubmit({id: "", type, name, balance, created});
     } catch(e) {
